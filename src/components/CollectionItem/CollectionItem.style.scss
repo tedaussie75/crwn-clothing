@@ -1,0 +1,54 @@
+.CollectionItem {
+    display: inline-block;
+    &:not(&:first-child) {
+        margin-left: 20px;
+    }
+    
+    .item-container {
+        position: relative;
+        &::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(255,255,255,.6);
+            opacity: 0;
+        }
+        &:hover {
+            &::before {
+                opacity: 1;
+            }
+
+            & .custom-button {
+                opacity: 1;
+            }
+        }
+        & img {
+            display: block;
+            margin-bottom: 10px;
+            width: 290px;
+            height: 400px;
+            object-fit: cover;
+            object-position: top;
+        }
+
+        & .custom-button {
+            opacity: 0;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            bottom: 30px;
+        }
+    }
+
+    & span {
+        width: 50%;
+        display: inline-block;
+
+        &:last-child {
+            text-align: end;
+        }
+    }
+}

@@ -1,0 +1,29 @@
+#menuItemContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    & .small {
+        max-width: calc((100% / 3) - 15px);
+        width: 100%;
+        max-height: 300px;
+
+        @media screen and (max-width: 950px) {
+            margin-top: 20px;
+            max-width: none;
+            width: 100%;
+            max-height: none;
+        }
+    }
+
+    & .large{
+        margin-top: 20px;
+        max-width: calc((100% / 2) - 10px);
+        max-height: 400px;
+        @media screen and (max-width: 950px) {
+            max-width: none;
+            width: 100%;
+            max-height: none;
+        }
+    }
+}
